@@ -1,0 +1,22 @@
+
+<template>
+    <h1>${titulo}</h1>
+
+    <form submit.trigger="agregarTarea()">
+        <input type="text" value.bind="descripcion">
+        <button type="submit" >Agregar Tarea</button>
+
+        <ul repeat.for="tarea of arrayTareas">
+            <li>
+                <input type="checkbox" checked.bind="tarea.realizado">
+                <span css="text-decoration: ${todo.done ? 'line-through' : 'none'}">
+                    ${tarea.descripcion}
+                </span>
+                <button click.trigger="eliminarTarea(tarea)">X</button>
+            </li>
+        </ul>
+    </form>
+    
+
+
+  </template>
